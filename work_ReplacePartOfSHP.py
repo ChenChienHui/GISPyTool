@@ -11,6 +11,7 @@ import fiona
 import pandas as pd
 import numpy as np
 import geopandas as gpd
+from cpami import Sewer_Schema as sewer
 
 def ReplacePartOfSHP(TargetColum, TargetVal, Schema, BaseFile, OutPath, DfBase, DfNew, ColumnExcel, OldName, NewName ):
     #
@@ -54,11 +55,12 @@ def ReplacePartOfSHP(TargetColum, TargetVal, Schema, BaseFile, OutPath, DfBase, 
     return
 
 if __name__ == "__main__":
+    print(132)
     # imformation
     DEVICE_NUM = "804020102"
     TARGET_COLUMN = "CITY_ID" 
     TARGET_VALUE = "00065" #新北    
-    SCHEMA = sewer.SCHEMA804020102   #from cpami import Sewer_Schema as sewer
+    SCHEMA = sewer.SCHEMA804020102
     
     # 成果路徑
     OUT_PATH = r'D:\04__Project_GIS\10207__普三_營建署連線\01_DATA_online\1_圖資\99_圖資整合20230112_抽換新北\TT'
