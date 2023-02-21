@@ -54,8 +54,8 @@ def ReplacePartOfSHP(TargetColum, TargetVal, Schema, BaseFile, OutPath, DfBase, 
     print(">>> 完成 ")
     return
 
+
 if __name__ == "__main__":
-    print(132)
     # imformation
     DEVICE_NUM = "804020102"
     TARGET_COLUMN = "CITY_ID" 
