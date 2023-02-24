@@ -11,7 +11,7 @@ import fiona
 import pandas as pd
 import numpy as np
 import geopandas as gpd
-from cpami import Sewer_Schema as sewer
+from cpami.Sewer_Schema import SewerSchema
 
 def ReplacePartOfSHP(TargetColum, TargetVal, Schema, BaseFile, OutPath, DfBase, DfNew, ColumnExcel, OldName, NewName ):
     #
@@ -59,8 +59,7 @@ if __name__ == "__main__":
     # imformation
     DEVICE_NUM = "804020102"
     TARGET_COLUMN = "CITY_ID" 
-    TARGET_VALUE = "00065" #新北    
-    SCHEMA = sewer.SCHEMA804020102
+    TARGET_VALUE = "00065" #新北
     
     # 成果路徑
     OUT_PATH = r'D:\04__Project_GIS\10207__普三_營建署連線\01_DATA_online\1_圖資\99_圖資整合20230112_抽換新北\TT'
@@ -77,5 +76,5 @@ if __name__ == "__main__":
     CECI_COL_NAME = "CECI對應欄位"
     
     # start 
-    ReplacePartOfSHP(TARGET_COLUMN, TARGET_VALUE, SCHEMA, BASE_FILE, OUT_PATH, DF_BASE, DF_NEW, COLUMN_EXCEL, SOURCE_COL_NAME, CECI_COL_NAME)
+    ReplacePartOfSHP(TARGET_COLUMN, TARGET_VALUE, SewerSchema[DEVICE_NUM], BASE_FILE, OUT_PATH, DF_BASE, DF_NEW, COLUMN_EXCEL, SOURCE_COL_NAME, CECI_COL_NAME)
     
